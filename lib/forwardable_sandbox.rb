@@ -6,13 +6,7 @@ User = Struct.new(:first_name, :last_name)
 class UserDecorator
   extend Forwardable
 
-  def self.delegate_to_hash(accessor, methods)
-    binding.pry
-  end
-
   def_delegators :@user, :first_name, :last_name
-
-  delegate_to_hash :@user, :lala
 
   def initialize(user)
     @user = if user.is_a? Hash

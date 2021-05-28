@@ -1,5 +1,6 @@
 require 'delegate'
 require 'pry'
+require 'ostruct'
 
 class HashDecorator < SimpleDelegator
   def initialize(params)
@@ -12,5 +13,6 @@ class HashDecorator < SimpleDelegator
 end
 
 a = HashDecorator.new(a: 1, b: 2)
+b = OpenStruct.new(a: 1, b: 2)
 
 binding.pry
